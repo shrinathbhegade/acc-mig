@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html class="no-js">
   <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-PG2NN3W");
+    </script>
+    <!-- End Google Tag Manager -->
+
     <title>ASCVD Risk Estimator +</title>
     <meta
       name="viewport"
@@ -21,6 +36,16 @@
   </head>
 
   <body onbeforeunload="window.scrollTo(0,0);">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-PG2NN3W"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div
       data-bind="page: {id:'calculate', role: 'start', beforeShow:remakeSticky()}"
       class="page with-group-sections"
@@ -38,7 +63,9 @@
               </span>
               <ul class="nav tabs tabs-primary">
                 <li id="estimate-Tab" class="selected">
-                  <a href="#!/calculate/estimate/" class="condensable small"
+                  <a
+                    href="#!/calculate/estimate/"
+                    class="condensable small btn-ga4"
                     >Estimate Risk</a
                   >
                 </li>
@@ -51,7 +78,7 @@
                   <a
                     href="#!/calculate/therapy/"
                     data-bind="click:$root.NavigateToForecastPage.bind('event', 'Clicked tab')"
-                    class="condensable small"
+                    class="condensable small ti-ce-ga4"
                     >Therapy Impact</a
                   >
                 </li>
@@ -69,7 +96,7 @@
                   <a
                     href="#!/calculate/advice/riskgraph/"
                     data-bind="click:$root.NavigateToSummaryPage.bind('event', 'Clicked tab')"
-                    class="condensable small"
+                    class="condensable small va-ce-ga4"
                     >Advice</a
                   >
                 </li>
@@ -253,8 +280,12 @@
                       class="switch-paddle"
                       for="checkbox-value-switch-radius"
                     >
-                      <span class="switch-active" aria-hidden="true">US</span>
-                      <span class="switch-inactive" aria-hidden="true">SI</span>
+                      <span class="switch-active btn-ga4" aria-hidden="true"
+                        >US</span
+                      >
+                      <span class="switch-inactive btn-ga4" aria-hidden="true"
+                        >SI</span
+                      >
                     </label>
                   </div>
                 </div>
@@ -1545,9 +1576,8 @@
                 class="button right"
                 data-bind="click:$root.NavigateToForecastPage.bind('event', 'Clicked button'), css: {disabled: ($root.Form().VisitType() == false && $root.Form().invalidLdlMessage() && $root.recommendationUnlock()) ? false : ($root.Form().VisitTypeUI()==true || $root.Form().VisitTypeUI()==undefined) ? true : !$root.recommendationUnlock()} "
                 custom-tooltip-parent
-                >Determine Therapy Impact&nbsp;&nbsp;<i
-                  class="fa fa-arrow-circle-right fa-6"
-                ></i
+                ><span class="ti-ce-ga4">Determine Therapy Impact</span
+                >&nbsp;&nbsp;<i class="fa fa-arrow-circle-right fa-6"></i
               ></a>
               <div class="custom-tooltip top">
                 Potential risk reduction impact of different therapies can only
@@ -1558,7 +1588,7 @@
             <div class="small-12 column text-right">
               <a
                 href="#!/calculate/advice/riskgraph"
-                class="button right left10"
+                class="button right left10 va-ce-ga4"
                 data-bind="click:$root.NavigateToSummaryPage.bind('event', 'Clicked button'), css: {disabled: ($root.Form().VisitType() == false && $root.Form().invalidLdlMessage() && $root.recommendationUnlock()) ? false : (($root.Form().VisitTypeUI()==undefined) ? true : !$root.recommendationUnlock())}"
                 custom-tooltip-parent
                 >View Advice&nbsp;&nbsp;<i
@@ -1578,9 +1608,8 @@
                 class="button right"
                 data-bind="click:$root.NavigateToForecastPage.bind('event', 'Clicked button'), css: {disabled: ($root.Form().VisitType() == false && $root.Form().invalidLdlMessage() && $root.recommendationUnlock()) ? false : ($root.Form().VisitTypeUI()==true || $root.Form().VisitTypeUI()==undefined) ? true : !$root.recommendationUnlock()}"
                 custom-tooltip-parent
-                >Determine Therapy Impact&nbsp;&nbsp;<i
-                  class="fa fa-arrow-circle-right fa-6"
-                ></i
+                ><span class="ti-ce-ga4">Determine Therapy Impact</span
+                >&nbsp;&nbsp;<i class="fa fa-arrow-circle-right fa-6"></i
               ></a>
               <div class="custom-tooltip top">
                 Potential risk reduction impact of different therapies can only
@@ -1591,7 +1620,7 @@
             <div class="small-12 column text-right">
               <a
                 href="#!/calculate/advice/riskgraph"
-                class="button right left10"
+                class="button right left10 va-ce-ga4"
                 data-bind="click:$root.NavigateToSummaryPage.bind('event', 'Clicked button'), css: {disabled: ($root.Form().VisitType() == false && $root.Form().invalidLdlMessage()) ? false : (($root.Form().VisitTypeUI()==undefined) ? true : !$root.recommendationUnlock())}"
                 custom-tooltip-parent
                 >View Advice&nbsp;&nbsp;<i
@@ -1900,7 +1929,9 @@
                       data-bind="visible:!$root.Form().isTreatmentTwo()"
                     >
                       <i class="fa fa-plus-circle" aria-hidden="true"></i
-                      >&nbsp;&nbsp;Project a Different Therapy Combination
+                      >&nbsp;&nbsp;<span class="btn-ga4"
+                        >Project a Different Therapy Combination</span
+                      >
                     </h4>
                   </a>
                 </div>
@@ -2023,7 +2054,9 @@
                       data-bind="visible:!$root.Form().isTreatmentThree()"
                     >
                       <i class="fa fa-plus-circle" aria-hidden="true"></i
-                      >&nbsp;&nbsp;Project a Different Therapy Combination
+                      >&nbsp;&nbsp;<span class="btn-ga4"
+                        >Project a Different Therapy Combination</span
+                      >
                     </h4>
                   </a>
                 </div>
@@ -2353,7 +2386,7 @@
         <div class="row">
           <div class="small-12 text-center columns hide-for-small-only">
             <a
-              class="button"
+              class="button btn-ga4"
               onclick=""
               data-open="exampleModal1"
               data-bind="click: function() {if($root.Form().Smoker()=='Former'){$root.Form().Smoker.prototype.months=$root.Form().QuiteSmokingMonths();$root.Form().Smoker('Never');$root.Form().Smoker.prototype.changed='yes';}}"
@@ -2362,7 +2395,7 @@
           </div>
           <div class="small-12 text-center columns show-for-small-only">
             <a
-              class="button small"
+              class="button small btn-ga4"
               onclick=""
               data-open="exampleModal1"
               data-bind="click: function() {if(Form().Smoker()=='Former'){Form().Smoker.prototype.months=Form().QuiteSmokingMonths();Form().Smoker('Never');Form().Smoker.prototype.changed='yes';}}"
@@ -2381,7 +2414,7 @@
           <div class="small-6 large-6 column text-right">
             <a
               href="#!/calculate/advice/riskgraph/"
-              class="button right left10"
+              class="button right left10 va-ce-ga4"
               data-bind="css: {disabled:  !$root.recommendationUnlock()}"
               custom-tooltip-parent
               >View Advice&nbsp;&nbsp;<i
@@ -2407,7 +2440,7 @@
           <div class="small-6 large-6 column text-right">
             <a
               href="#!/calculate/advice/riskgraph/"
-              class="button small right left10"
+              class="button small right left10 va-ce-ga4"
               data-bind="css: {disabled:  !$root.recommendationUnlock()}"
               custom-tooltip-parent
               >View Advice&nbsp;&nbsp;<i
@@ -2443,7 +2476,7 @@
             </h1>
             <div class="column large-4 medium-6 small-6">
               <a
-                class="button"
+                class="button btn-ga4"
                 id="email"
                 data-rel="external"
                 onclick="sendEmail()"
@@ -2451,7 +2484,9 @@
               >
             </div>
             <div class="column large-4 medium-6 small-6 text-right">
-              <a class="button" id="print" onclick="printApp();">Print</a>
+              <a class="button btn-ga4" id="print" onclick="printApp();"
+                >Print</a
+              >
             </div>
           </div>
 
@@ -3277,8 +3312,10 @@
                 href="#!/calculate/estimate/"
                 class="button right left10"
                 data-bind=""
-                ><i class="fa fa-arrow-circle-left fa-6"></i
-                >&nbsp;&nbsp;Estimate Risk</a
+                ><i class="fa fa-arrow-circle-left fa-6"></i>&nbsp;&nbsp;<span
+                  class="btn-ga4"
+                  >Estimate Risk</span
+                ></a
               >
             </div>
             <div class="small-12 column">
@@ -3288,8 +3325,10 @@
                 onclick=""
                 data-bind="click:$root.NavigateToForecastPage.bind('event', 'null'), css: {disabled: ($root.Form().VisitType() == false && $root.Form().invalidLdlMessage()) ? false : ($root.Form().VisitTypeUI()==true || $root.Form().VisitTypeUI()==undefined) ? true : !$root.recommendationUnlock()}"
                 custom-tooltip-parent
-                ><i class="fa fa-arrow-circle-left fa-6"></i
-                >&nbsp;&nbsp;Determine Therapy Impact</a
+                ><i class="fa fa-arrow-circle-left fa-6"></i>&nbsp;&nbsp;<span
+                  class="ti-ce-ga4"
+                  >Determine Therapy Impact</span
+                ></a
               >
               <div class="custom-tooltip top">
                 Potential risk reduction impact of different therapies can only
@@ -3301,8 +3340,10 @@
           <div class="row show-for-small-only collapse">
             <div class="small-12 column">
               <a href="#!/calculate/estimate/" class="button right" data-bind=""
-                ><i class="fa fa-arrow-circle-left fa-6"></i
-                >&nbsp;&nbsp;Estimate Risk</a
+                ><i class="fa fa-arrow-circle-left fa-6"></i>&nbsp;&nbsp;<span
+                  class="btn-ga4"
+                  >Estimate Risk</span
+                ></a
               >
             </div>
             <div class="small-12 column">
@@ -3312,8 +3353,10 @@
                 onclick=""
                 data-bind="click:$root.NavigateToForecastPage.bind('event', 'null'), css: {disabled: ($root.Form().VisitType() == false && $root.Form().invalidLdlMessage()) ? false : ($root.Form().VisitTypeUI()==true || $root.Form().VisitTypeUI()==undefined) ? true : !$root.recommendationUnlock()}"
                 custom-tooltip-parent
-                ><i class="fa fa-arrow-circle-left fa-6"></i
-                >&nbsp;&nbsp;Determine Therapy Impact</a
+                ><i class="fa fa-arrow-circle-left fa-6"></i>&nbsp;&nbsp;<span
+                  class="ti-ce-ga4"
+                  >Determine Therapy Impact</span
+                ></a
               >
               <div class="custom-tooltip top">
                 Potential risk reduction impact of different therapies can only
@@ -3343,7 +3386,9 @@
               </span>
               <ul class="nav tabs tabs-primary">
                 <li id="estimate-Tab" class="selected">
-                  <a href="#!/calculate/estimate/" class="condensable small"
+                  <a
+                    href="#!/calculate/estimate/"
+                    class="condensable small btn-ga4"
                     >Estimate Risk</a
                   >
                 </li>
@@ -3356,7 +3401,7 @@
                   <a
                     href="#!/calculate/therapy/"
                     data-bind="click:$root.NavigateToForecastPage.bind('event', 'Clicked tab')"
-                    class="condensable small"
+                    class="condensable small ti-ce-ga4"
                     >Therapy Impact</a
                   >
                 </li>
@@ -3374,7 +3419,7 @@
                   <a
                     href="#!/calculate/advice/riskgraph/"
                     data-bind="click:$root.NavigateToSummaryPage.bind('event', 'Clicked tab')"
-                    class="condensable small"
+                    class="condensable small va-ce-ga4"
                     >Advice</a
                   >
                 </li>
@@ -6150,26 +6195,26 @@
       >
         <li id="guideline-Tab" class="">
           <a href="#!/content/resources/">
-            <span class="short-text">Resources</span>
-            <span class="long-text">Resources</span>
+            <span class="short-text btn-ga4">Resources</span>
+            <span class="long-text btn-ga4">Resources</span>
           </a>
         </li>
         <li id="legal-Tab" class="">
           <a href="#!/content/terms/">
-            <span class="short-text">Terms</span>
-            <span class="long-text">Terms</span>
+            <span class="short-text btn-ga4">Terms</span>
+            <span class="long-text btn-ga4">Terms</span>
           </a>
         </li>
         <li id="about-Tab" class="">
           <a href="#!/content/about/">
-            <span class="short-text">About</span>
-            <span class="long-text">About the App</span>
+            <span class="short-text btn-ga4">About</span>
+            <span class="long-text btn-ga4">About the App</span>
           </a>
         </li>
         <li id="notifications-Tab" class="selected">
           <a href="#!/content/news/">
-            <span class="short-text">News</span>
-            <span class="long-text">News</span>
+            <span class="short-text btn-ga4">News</span>
+            <span class="long-text btn-ga4">News</span>
           </a>
         </li>
       </ul>
@@ -10031,7 +10076,10 @@
         </p>
       </div>
       <div class="row columns large-4 text-center">
-        <a class="button" data-rel="external" onclick="emailYoungPatients()"
+        <a
+          class="button btn-ga4"
+          data-rel="external"
+          onclick="emailYoungPatients()"
           >Email Advice</a
         >
       </div>
