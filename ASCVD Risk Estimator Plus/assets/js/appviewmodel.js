@@ -1246,8 +1246,6 @@ function viewModel() {
     else return true;
   }, self);
   self.resetAll = function () {
-    console.log(location.ancestorOrigins);
-    console.log(window.location.ancestorOrigins);
     self.validate(false);
     self.Form().Race(undefined);
     self.Form().Age(undefined);
