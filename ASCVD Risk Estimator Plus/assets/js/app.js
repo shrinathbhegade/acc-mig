@@ -1040,7 +1040,7 @@ ko.bindingHandlers["ui-accordion"] = {
       }
     });
   },
-  update: function (element, valueAccessor) {},
+  update: function (element, valueAccessor) { },
 };
 ko.bindingHandlers.toggle = {
   after: ["value", "attr"],
@@ -1201,7 +1201,7 @@ $(document).ready(function () {
           }
         });
         return this;
-      } catch (error) {}
+      } catch (error) { }
     };
   })(jQuery);
   $("#body").enterAsTab({
@@ -1237,8 +1237,8 @@ $(document).ready(function () {
     create: function () {
       this.selectonic("disable");
     },
-    unselect: function (event, ui) {},
-    select: function (event, ui) {},
+    unselect: function (event, ui) { },
+    select: function (event, ui) { },
   });
   parent_panel.mouseenter(function () {
     parent_panel.selectonic("enable");
@@ -1256,8 +1256,8 @@ $(document).ready(function () {
     create: function () {
       this.selectonic("disable");
     },
-    unselect: function (event, ui) {},
-    select: function (event, ui) {},
+    unselect: function (event, ui) { },
+    select: function (event, ui) { },
   });
   child_panel.mouseenter(function () {
     child_panel.selectonic("enable");
@@ -1345,15 +1345,15 @@ function printApp() {
     .replace(
       "#timestamp#",
       datetime.getMonth() +
-        1 +
-        "/" +
-        datetime.getDate() +
-        "/" +
-        datetime.getFullYear() +
-        " " +
-        dateFormatter(datetime.getHours()) +
-        ":" +
-        dateFormatter(datetime.getMinutes())
+      1 +
+      "/" +
+      datetime.getDate() +
+      "/" +
+      datetime.getFullYear() +
+      " " +
+      dateFormatter(datetime.getHours()) +
+      ":" +
+      dateFormatter(datetime.getMinutes())
     )
     .replace("#age#", appmodel.Form().Age());
 
@@ -1513,13 +1513,12 @@ function makeAck() {
   //expires in 10 days
   d.setTime(d.getTime() + 10 * 224 * 60 * 60 * 1000);
   var expires = "expires=" + d.toUTCString();
-  1;
-  CookieString = cname + "=" + cvalue.toUTCString() + ";" + expires + ";path=/";
-  +"secure; httpOnly";
+  CookieString = cname + "=" + cvalue.toUTCString() + ";" + expires + ";secure" + ";HttpOnly" + ";path=/";
   document.cookie = CookieString;
   //remove banner
   removeBanner();
 }
+
 function removeBanner() {
   var elem = document.getElementById("cookie-banner");
   if (elem) elem.parentNode.removeChild(elem);
@@ -1534,7 +1533,7 @@ function loadBanner() {
   }).done(function (data) {
     template.innerHTML = data;
     document.body.appendChild(template);
-    setBannerText();
+    //setBannerText();
   });
 }
 
@@ -1556,10 +1555,10 @@ function getCookie(cname) {
 }
 
 function setBannerText() {
-  if ($("#cookieWarning .col-md-9 .col-lg-9")) {
-    $("#cookieWarning .col-md-9").html(
-      appmodel.FormData().gdprBanner.bannerText
-    );
-    $("#ackButton").html(appmodel.FormData().gdprBanner.buttonText);
-  }
+  // if ($("#cookieWarning .col-md-9 .col-lg-9")) {
+  //   $("#cookieWarning .col-md-9").html(
+  //     appmodel.FormData().gdprBanner.bannerText
+  //   );
+  //   $("#ackButton").html(appmodel.FormData().gdprBanner.buttonText);
+  // }
 }
