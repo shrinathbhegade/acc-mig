@@ -1513,7 +1513,7 @@ function makeAck() {
   //expires in 10 days
   d.setTime(d.getTime() + 10 * 224 * 60 * 60 * 1000);
   var expires = "expires=" + d.toUTCString();
-  CookieString = cname + "=" + cvalue.toUTCString() + ";" + expires + ";secure" + ";HttpOnly" + ";path=/";
+  CookieString = cname + "=" + cvalue.toUTCString() + ";" + expires + "; path=/" + "; secure";
   document.cookie = CookieString;
   //remove banner
   removeBanner();
@@ -1533,7 +1533,6 @@ function loadBanner() {
   }).done(function (data) {
     template.innerHTML = data;
     document.body.appendChild(template);
-    //setBannerText();
   });
 }
 
@@ -1552,13 +1551,4 @@ function getCookie(cname) {
     }
   }
   return "";
-}
-
-function setBannerText() {
-  // if ($("#cookieWarning .col-md-9 .col-lg-9")) {
-  //   $("#cookieWarning .col-md-9").html(
-  //     appmodel.FormData().gdprBanner.bannerText
-  //   );
-  //   $("#ackButton").html(appmodel.FormData().gdprBanner.buttonText);
-  // }
 }
