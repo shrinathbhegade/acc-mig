@@ -1391,24 +1391,42 @@ function printApp() {
   printerStage.appendChild(clone);
 
   //Advice Card
-  clone = document.getElementById("advice-card").cloneNode(true);
-  $(clone).removeClass("collapsable-panel");
-  $(clone).addClass("row columns");
-  $(clone).css("display", "block");
-  printerStage.appendChild(clone);
+  // clone = document.getElementById("advice-card").cloneNode(true);
+  // $(clone).removeClass("collapsable-panel");
+  // $(clone).addClass("row columns");
+  // $(clone).css("display", "block");
+  // printerStage.appendChild(clone);
 
-  //Disclaimer notice
-  clone = document.getElementById("disclaimer-print").cloneNode(true);
-  $(clone).addClass("row columns");
-  printerStage.appendChild(clone);
 
-  //Disclaimer notice 2
-  clone = document.getElementById("disclaimer-print-2").cloneNode(true);
-  $(clone).addClass("row columns");
-  printerStage.appendChild(clone);
+  //$("#" + 'optimize' + " .accordion div").addClass("selected");
+  $("#" + 'optimize' + " .accordion .collapsable-panel").slideDown();
+  setTimeout(() => {
 
-  var _printer = new Printer();
-  _printer.print(printerStage, _printer.printType.paper);
+    clone = document.getElementById("treatment_advice").cloneNode(true);
+    printerStage.appendChild(clone);
+
+    //$("#" + 'optimize' + " .accordion div").removeClass("selected");
+    $("#" + 'optimize' + " .accordion .collapsable-panel").slideUp();
+
+    //Disclaimer notice
+    clone = document.getElementById("disclaimer-print").cloneNode(true);
+    $(clone).addClass("row columns");
+    printerStage.appendChild(clone);
+
+    //Disclaimer notice 2
+    clone = document.getElementById("disclaimer-print-2").cloneNode(true);
+    $(clone).addClass("row columns");
+    printerStage.appendChild(clone);
+
+    var _printer = new Printer();
+    _printer.print(printerStage, _printer.printType.paper);
+  }, 400)
+
+  // $(clone).removeClass("collapsable-panel");
+  // $(clone).addClass("row columns");
+  // $(clone).css("display", "block");
+
+
 }
 function AddEvent(d) {
   d.addEventListener("paste", action.bind(d));
