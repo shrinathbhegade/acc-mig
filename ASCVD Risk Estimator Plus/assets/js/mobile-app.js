@@ -15,9 +15,6 @@ var mobileApp = {
     document.addEventListener("resume", mobileApp.onResume, false);
     //checking device network status
     isDeviceOnline = mobileApp.isOnline();
-    // intializing GA plugin
-    window.analytics.startTrackerWithId(googleAnalyticsTrackingId);
-    window.analytics.trackView("pageview");
 
     mobileApp.notify();
     // The event fires when an application goes online, and the device is connected to the Internet.
