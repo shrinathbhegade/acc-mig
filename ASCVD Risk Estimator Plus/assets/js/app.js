@@ -1333,7 +1333,7 @@ $(document).ready(function () {
     });
   });
 });
-function printApp() {
+function printApp(mode = undefined) {
   var printerStage, clone, datetime, patientInfo, patientHeader;
 
   printerStage = document.createElement("div");
@@ -1391,43 +1391,34 @@ function printApp() {
   printerStage.appendChild(clone);
 
   //Advice Card
-  // clone = document.getElementById("advice-card").cloneNode(true);
-  // $(clone).removeClass("collapsable-panel");
-  // $(clone).addClass("row columns");
-  // $(clone).css("display", "block");
-  // printerStage.appendChild(clone);
+  if (mode === 1) {
+    clone = document.getElementById("advice-card").cloneNode(true);
+    $(clone).removeClass("collapsable-panel");
+    $(clone).addClass("row columns");
+    $(clone).css("display", "block");
+    printerStage.appendChild(clone);
+  }
 
-
-  //$("#" + 'optimize' + " .accordion div").addClass("selected");
-  $("#" + 'optimize' + " .accordion .collapsable-panel").slideDown();
-  setTimeout(() => {
-
+  if (mode === 2) {
     clone = document.getElementById("treatment_advice").cloneNode(true);
+    $(clone).find("div.collapsable-panel").css("display", "block");
     printerStage.appendChild(clone);
+  }
 
-    //$("#" + 'optimize' + " .accordion div").removeClass("selected");
-    $("#" + 'optimize' + " .accordion .collapsable-panel").slideUp();
+  //Disclaimer notice
+  clone = document.getElementById("disclaimer-print").cloneNode(true);
+  $(clone).addClass("row columns");
+  printerStage.appendChild(clone);
 
-    //Disclaimer notice
-    clone = document.getElementById("disclaimer-print").cloneNode(true);
-    $(clone).addClass("row columns");
-    printerStage.appendChild(clone);
+  //Disclaimer notice 2
+  clone = document.getElementById("disclaimer-print-2").cloneNode(true);
+  $(clone).addClass("row columns");
+  printerStage.appendChild(clone);
 
-    //Disclaimer notice 2
-    clone = document.getElementById("disclaimer-print-2").cloneNode(true);
-    $(clone).addClass("row columns");
-    printerStage.appendChild(clone);
-
-    var _printer = new Printer();
-    _printer.print(printerStage, _printer.printType.paper);
-  }, 400)
-
-  // $(clone).removeClass("collapsable-panel");
-  // $(clone).addClass("row columns");
-  // $(clone).css("display", "block");
-
-
+  var _printer = new Printer();
+  _printer.print(printerStage, _printer.printType.paper);
 }
+
 function AddEvent(d) {
   d.addEventListener("paste", action.bind(d));
   d.addEventListener("keypress", action.bind(d));

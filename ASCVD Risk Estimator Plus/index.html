@@ -22,7 +22,66 @@
       content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no"
     />
     <meta charset="utf-8" />
-   <link rel="shortcut icon" type="image/png" href="favicon.ico" />
+    <script type="text/javascript">
+      let fullURL = document.URL;
+      var baseURL = '';
+      if(fullURL.indexOf("?") !== -1){
+        baseURL = fullURL.substring(0,fullURL.indexOf('?'));
+      }
+      else if(fullURL.indexOf("#") !== -1){
+        baseURL = fullURL.substring(0,fullURL.indexOf('#'));
+      }
+      else
+        baseURL = '';
+      
+      let style = document.createElement("link");
+        style.setAttribute("rel", "shortcut icon");
+        style.setAttribute("href", 'favicon.ico');
+        document.head.appendChild(style);
+      style = document.createElement("link");
+        style.setAttribute("href", baseURL+"assets/css/styledown.css");
+        style.setAttribute("rel", "stylesheet");
+        document.head.appendChild(style);
+      style = document.createElement("link");
+        style.setAttribute("href", baseURL+"assets/css/normalize.min.css");
+        style.setAttribute("rel", "stylesheet");
+        document.head.appendChild(style);
+      style = document.createElement("link");
+        style.setAttribute("href", baseURL+"assets/css/jquery-ui.css");
+        style.setAttribute("rel", "stylesheet");
+        document.head.appendChild(style);
+      style = document.createElement("link");
+        style.setAttribute("href", baseURL+"assets/css/jquery-uistructure.css");
+        style.setAttribute("rel", "stylesheet");
+        document.head.appendChild(style);
+      style = document.createElement("link");
+        style.setAttribute("href", baseURL+"assets/css/foundation.min.css");
+        style.setAttribute("rel", "stylesheet");
+        document.head.appendChild(style);
+      style = document.createElement("link");
+        style.setAttribute("href", baseURL+"assets/css/foundation-sites.css");
+        style.setAttribute("rel", "stylesheet");
+        document.head.appendChild(style);
+      style = document.createElement("link");
+        style.setAttribute("href", baseURL+"assets/css/font-awesome.css");
+        style.setAttribute("rel", "stylesheet");
+        document.head.appendChild(style);
+      style = document.createElement("link");
+        style.setAttribute("href", baseURL+"assets/css/index.css");
+        style.setAttribute("rel", "stylesheet");
+        document.head.appendChild(style);
+      style = document.createElement("link");
+        style.setAttribute("href", baseURL+"assets/css/ascvd-riskplus.css");
+        style.setAttribute("rel", "stylesheet");
+        document.head.appendChild(style);
+      style = document.createElement("link");
+        style.setAttribute("href", baseURL+"assets/css/print-css.css");
+        style.setAttribute("rel", "stylesheet");
+        document.head.appendChild(style);
+    </script>
+    
+    <!--
+    <link rel="shortcut icon" type="image/png" href="favicon.ico" />
     <link rel="stylesheet" href="assets/css/styledown.css" />
     <link rel="stylesheet" href="assets/css/normalize.min.css" />
     <link rel="stylesheet" href="assets/css/jquery-ui.css" />
@@ -33,6 +92,7 @@
     <link rel="stylesheet" href="assets/css/index.css" />
     <link rel="stylesheet" href="assets/css/ascvd-riskplus.css" />
     <link rel="stylesheet" href="assets/css/print-css.css" />
+  -->
   </head>
 
   <body onbeforeunload="window.scrollTo(0,0);">
@@ -2478,7 +2538,7 @@
                 treatment advice based on the data provided.</span
               >
             </h1>
-            <div class="column large-6">
+            <div class="column small-5">
               <a
                 class="button btn-ga4"
                 id="email"
@@ -2487,13 +2547,11 @@
                 >Email Advice</a
               >
             </div>
-             <div class="column small-4">
-              <a class="button btn-ga4" id="print" onclick="printApp();"
+             <div class="column large-6" style="width: fit-content;">
+              <a class="button btn-ga4" id="print" onclick="printApp(2);"
                 >Print with Complete Treatment Advice</a
               >
-            </div>
-            <div class="column small-2 text-right">
-              <a class="button btn-ga4" id="print" onclick="printApp();"
+                <a class="button btn-ga4" id="print" onclick="printApp(1);"
                 >Print</a
               >
             </div>
